@@ -1,0 +1,36 @@
+server:
+  port: 8080
+
+# JWT Configuration
+jwt:
+  secret:
+    key: "your_jwt_secret_key"  # Ganti dengan key yang lebih aman
+  expiration:
+    time: 3600000  # JWT token expiration time in milliseconds (1 hour)
+
+# Spring Security Configuration
+spring:
+  security:
+    user:
+      name: user
+      password: password
+
+# Database Configuration
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/salesdb
+    username: postgres
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
+
+# Logging Configuration
+logging:
+  level:
+    org.springframework.security: DEBUG  # Logs for Spring Security
+    com.salesapp.sales_app.security: DEBUG  # Logs for your custom security package
